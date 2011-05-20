@@ -52,4 +52,5 @@ uninstall:
 clean:
 	rm -f ebin/*.beam
 	rm -f $(TARGETS)
-	rm -fr ebin
+	rm -fr $(EBIN_DIR)
+	rm -fr $(LIB_DIR)
