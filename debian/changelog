@@ -1,0 +1,5 @@
+erlang-random-nif (1.0-0) unstable; urgency=low
+
+  * Debian packaging.
+
+ -- Andrei Soroker <andrei@rd.io>  Thu, 19 May 2011 13:25:51 -0700

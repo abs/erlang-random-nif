@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+unexport CFLAGS
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	# 
+
+# override_dh_auto_install:
+# 
+
+install: build
+    $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install       
+
+override_dh_installinit:
+	dh_installinit -r
