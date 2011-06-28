@@ -16,9 +16,15 @@ static ERL_NIF_TERM random_int(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv
     return enif_make_int(env, rand());
 }
 
+static ERL_NIF_TERM unix_time(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
+{
+    return enif_make_int(env, time(NULL));
+}
+
 static ErlNifFunc nif_funcs[] =
 {
-    {"random_int", 0, random_int}
+    {"random_int", 0, random_int},
+    {"unix_time", 0, unix_time}
 };
 
 ERL_NIF_INIT(erlang_random_nif, nif_funcs, load, NULL, NULL, NULL)

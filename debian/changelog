@@ -1,3 +1,9 @@
+erlang-random-nif (1.0-1) unstable; urgency=low
+
+  * Add unix_time/0.
+
+ -- Andrei Soroker <andrei@rd.io>  Tue, 28 Jun 2011 14:41:14 -0700
+
 erlang-random-nif (1.0-0) unstable; urgency=low
 
   * Debian packaging.

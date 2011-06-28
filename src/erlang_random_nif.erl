@@ -2,7 +2,12 @@
 
 -on_load(init/0).
 
--export([init/0, init/1, random_int/0]).
+-export([init/0, init/1]).
+
+-export([
+    random_int/0,
+    unix_time/0
+    ]).
 
 -define(MAXINT, 479001600).
 
@@ -22,3 +27,9 @@ random_int() ->
     {A1, A2, A3} = now(),
     random:seed(A1, A2, A3),
     random:uniform(?MAXINT).
+
+unix_time() ->
+    calendar:datetime_to_gregorian_seconds(
+        calendar:universal_time()) -
+            calendar:datetime_to_gregorian_seconds(
+                {{1970, 1, 1}, {0, 0, 0}}). 
