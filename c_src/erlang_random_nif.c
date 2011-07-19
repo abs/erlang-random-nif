@@ -11,6 +11,18 @@ static int load(ErlNifEnv* env, void** priv_data, ERL_NIF_TERM load_info)
     return 0;
 }
 
+static int reload(ErlNifEnv* env, void** priv_data, ERL_NIF_TERM load_info)
+{
+    srand(time(NULL));
+    return 0;
+}
+
+static int upgrade(ErlNifEnv* env, void** priv_data, void** old_priv_data, ERL_NIF_TERM load_info)
+{
+    srand(time(NULL));
+    return 0;
+}
+
 static ERL_NIF_TERM random_int(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
 {
     return enif_make_int(env, rand());
@@ -27,4 +39,4 @@ static ErlNifFunc nif_funcs[] =
     {"unix_time", 0, unix_time}
 };
 
-ERL_NIF_INIT(erlang_random_nif, nif_funcs, load, NULL, NULL, NULL)
+ERL_NIF_INIT(erlang_random_nif, nif_funcs, load, reload, upgrade, NULL)

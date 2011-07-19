@@ -1,3 +1,9 @@
+erlang-random-nif (1.0-2) unstable; urgency=low
+
+  * Add reload and upgrade.
+
+ -- Andrei Soroker <andrei@rd.io>  Mon, 18 Jul 2011 15:19:15 -0700
+
 erlang-random-nif (1.0-1) unstable; urgency=low
 
   * Add unix_time/0.
